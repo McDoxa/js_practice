@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Loops</title>
+    <script>
+        //For Loop
+        for(let counter = 0; counter < 4; counter++){
+            console.log(counter);
+            }
+        //Looping through an array
+        const animals = ['Bear','Sloth','Lion'];
+        for (let i=0; i < animals.length; i++){
+            console.log(animals[i]);
+            }
+        //Nested Loop
+        const myArray = [6,19,20];
+        const yourArray = [19.81.2];
+        for (let i=0; i<myArray.length; i++){
+            for (let j=0; j< yourArray.length; j++){
+                if (myArray[i] === yourArray[j]){
+                console.log('Both loops have the number: ' + yourArray[j])
+                }
+               }
+              };
+        //While Loop
+        let counterTwo = 1;
+        while(counterTwo <4){
+        console.log(counterTwo);
+        counterTwo++;
+        }
+        //Do-While Statements
+        let countString = 5;
+        let i=0;
+        do{
+            countString = countString + i;
+            i++;
+            } while (i<5);
+        // Difference between Do-While and While Loop
+        const firstMessage =  'I will print!' ;
+        const secondMessage =  'I will not print!' ;
+        //Do-While
+        do  {
+        console.log(firstMessage)
+        }    while( true ===  false );
+
+        // While   loop
+        while( true === false ){
+            console.log(secondMessage)
+        };
+
+        //For-Loop with break
+        for (let i=0; i<99; i++){
+            if (i>2){
+            break;}
+            console.log('Banana');
+            }
+         console.log('Orange you glad I broke out of the loop!')
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
