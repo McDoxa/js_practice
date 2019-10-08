@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Arrays</title>
+    <script>
+        // Updating Array Elements
+        let seasons = ['Winter','Spring','Summer','Fall'];
+        seasons[3] = 'Autumn'; // replaces Fall with Autumn
+        console.log(seasons);
+
+        // Array Methods
+        const itemTracker =['item0','item1','item2'];
+        const removed = itemTracker.pop(); // removes the last item in the list
+        console.log(itemTracker);
+        console.log(removed);
+
+        const newItem = ['item0','item1','item2'];
+        newItem.push('item3','item4') // adds items 3 and 4 to the list.
+
+        const newYear = ['keep','take','give'];
+        console.log(newYear.length); // returns the number of items in the list.
+
+        //Arrays and Functions
+        const flowers = ['peony','daffodil','marigold'];
+        function addFlower(arr){
+            arr.Push('lily');
+         }
+
+        //Nested Arrays
+        const nestedArr = [[1],[2,3]];
+        console.log(nestedArr[1]);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

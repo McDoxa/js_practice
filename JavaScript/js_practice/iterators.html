@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Iterators</title>
+</head>
+<body>
+    <script>
+        //The .forEach() method
+        const groceries = ['brown sugar','salt','cranberries','walnuts'];
+        groceries.forEach(function(groceryItem){
+        console.log(' - ' + groceryItem);
+        });
+
+        //Using Arrow function syntax
+        groceries.forEach(groceryItem => console.log(groceryItem));
+
+        //You can define a function before hand and pass the name of the
+        //function as an argument to the forEach method
+        function printGrocery(element){
+        console.log(' - ' + element);
+        }
+        groceries.forEach(printGrocery);
+
+        //The .map() method
+        const numbers = [1,2,3,4,5];
+        const bigNumbers = numbers.map(number => { //returns a new array.
+        return number*10;
+        });
+        console.log(numbers);
+        console.log(bigNumbers);
+
+        //The .filter() method
+        const words = ['chairs','music','pillow','brick', 'pen', 'door'];
+        const shortWords = words.filter(word => { //returns a new array.
+        return word.length < 6;
+        });
+        console.log(words);
+        console.log(shortWords);
+
+        //The .findIndex() method; returns the index of the first element that evaluates to
+        //true in the callback function.
+        const jumbleNums = [123,25,78,5,9];
+        const lessThanTen = jumbleNums.findIndex(num => {
+        return num<10
+        });
+        console.log(lessThanTen);
+        console.log(jumbleNums[lessThanTen]);
+
+        //The .reduce() method; returns a single value after
+        //iterating through the elements of an array.
+        const number = [1,2,4,10];
+        const summedNums = number.reduce((accumulator, currentValue)=>{
+        return accumulator + currentValue}
+        )
+        console.log(summedNums);
+        // Note: The .reduce() method can also take an optional
+        //second parameter to set the initial value for the accumulator.
+        const numberUno = [1,2,4,10];
+        const summedNum = numberUno.reduce((accumulator, currentValue)=>{
+        return accumulator + currentValue},100) //100 is the second argument.
+        console.log(summedNum);
+
+    </script>
+
+</body>
+</html>

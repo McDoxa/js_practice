@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Objects</title>
+</head>
+<body>
+    <script>
+        //Creating object literals
+        const spaceship = {
+            'Fuel Type': 'diesel', //These are object properties. Property -
+             color : 'silver',   //comprises of an key:value pair
+             homePlanet: 'Earth',
+             'Active Duty': true,
+             numCrew : 5,
+             mission: 'Explore the universe'
+        };
+
+        //Accessing properties
+        console.log(spaceship.homePlanet);
+        console.log(spaceship['homePlanet']);
+        console.log(spaceship.color);
+        console.log(spaceship['color']);
+        console.log(spaceship['Fuel Type']);
+        console.log(spaceship['Fuel Type']);
+        console.log(spaceship['Active Duty']);
+        console.log(spaceship['numCrew']);
+        console.log(spaceship['!!!']);  //returns Undefined
+        // Note that when accessing keys that have
+        //numbers, spaces or special characters in them, you must use bracket notations only.
+
+        //How to use the bracket notation in a function
+        let returnAnyProp = (objectName, propName) => objectName[propName];
+        console.log(returnAnyProp(spaceship, 'homePlanet'));
+
+        //Property Assignment; Objects are mutable.
+        spaceship.color = 'gold';  //changes the value of the color ppty.
+        spaceship['Fuel Type'] = 'Vegetable Oil'; //changes the value of the 'Fuel Type' property.
+        console.log(spaceship['color']);
+        console.log(spaceship['Fuel Type']);
+        spaceship.speed = 'Mach 5'; //creates a new key 'speed'.
+        spaceship.type = 'alien'; //creates a new key 'type'
+        console.log(spaceship.speed);
+        console.log(spaceship.type);
+        //spaceship = {type: 'Shuttle'}; //returns a TypeError for trying to assign
+        //to a constant variable.
+
+        //Delete a property
+        delete spaceship.mission; //deletes the property 'mission'
+        console.log(spaceship.mission) // returns 'undefined' cos the property has already been deleted.
+
+        //Methods; When the data stored on an object is a function,
+        //we call that a method. A property is what an object has, while
+        // a method is what an object does. e.g .log(), .floor(), etc.
+        const alienShip = {
+            invade: function(){
+                console.log('Hello! We have come to dominate your planet. Instead of Earth, it shall be called new Xaculon')
+                }
+            };
+            alienShip.invade(); //Object methods are invoked by appending the
+            //object's name with the dot operator followed by the method name
+            //and parenthesis.
+
+            //Nested Objects; this is when an object has another object as a property
+            const shipSpace =  {
+                telescope: {
+                    yearBuilt: 2018,
+                    model: '91031-XLT',
+                    focalLength: 2032
+                    },
+                crew: {
+                    captain: {
+                        name: 'Sandra',
+                        degree: 'Computer Engineering',
+                        encourageTeam() {console.log('We got this!')}
+                         }
+                    },
+                engine: {
+                    model: 'Nimbus2000'
+                    },
+                nanoelectronics:{
+                    computer: {
+                      terabytes: 100,
+                       monitors: 'HD'
+                       },
+                    'back-up': {
+                        battery: 'Lithium',
+                        terabytes: 50
+                        }
+                    }
+                };
+                const outPut = shipSpace.nanoelectronics['back-up'].battery;
+                console.log(outPut); //returns lithium.
+
+                //Pass By Reference; Objects are passed by reference. When a variable assigned
+                //to an object is passed into a function as an argument, the computer interprets
+                //the parameter name as pointing to the space in memory holding that object.
+                let paintIt = obj => {
+                    obj.color = 'glorious gold'
+                    };
+                paintIt(spaceship);
+                console.log(spaceship.color);
+
+                //Looping through objects
+                for (crewMember in shipSpace.crew){
+                    console.log(`${crewMember}: ${shipSpace.crew[crewMember].name}`)
+                };
+
+                //
+
+    </script>
+</body>
+</html>

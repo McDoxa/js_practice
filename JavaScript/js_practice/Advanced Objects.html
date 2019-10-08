@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Advanced Objects</title>
+</head>
+<body>
+<script>
+    //The this keyword
+    const goat = {
+        dietType: 'herbivore',
+        makeSound() {
+            console.log('baaa');
+            },
+        diet() {
+            console.log(this.dietType); //returns error 'dietType not defined.' without the 'this' keyword
+            }
+        };
+    console.log(goat.diet());
+    //Arrow Functions and this; The this keyword doesnt work with the arrow function.
+    const dog = {
+        dietType: 'Carnivore',
+        makeSound() {
+            console.log('Bark bark');
+            },
+        diet: () => {
+            console.log(this.dietType)
+            }
+        };
+        console.log(dog.diet()); //returns undefined.
+    //Privacy
+
+</script>
+
+</body>
+</html>
